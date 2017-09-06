@@ -1,0 +1,40 @@
+Label{
+  font-size: 16px;
+}
+
+.dark{ color: #000; }
+
+.tema {
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #D62631;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.title-post {
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.autor{
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.excerpt{
+}
+
+.hr-dark {
+  height:1;
+  background-color:#000;
+  width:100%;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.info-post{
+  font-size: 14px;
+  font-weight: 700;
+}

@@ -1,0 +1,17 @@
+<CardView  class="cardStyle" margin="10" elevation="40" radius="5" >
+    <StackLayout>
+        <Image [src]="data.imageUrl" stretch="aspectFit"></Image>
+        <GridLayout padding="14" rows="auto, auto, auto, auto, auto, auto" columns="2*, *">
+            <Label class="tema" [text]="data.tema" textAlignment="center" textWrap="true" row="0" col="0" colSpan="2"></Label>
+            <Label class="[ title-post ][ dark ]" [text]="data.title" textAlignment="center" textWrap="true" row="1" col="0" colSpan="2"></Label>
+            <Label class="[ autor ]" [text]="data.autor" textAlignment="center" textWrap="true" row="2" col="0" colSpan="2"></Label>
+            <Label class="[ dark ]" [text]="data.excerpt" textAlignment="center" textWrap="true" row="3" col="0" colSpan="2"></Label>
+            <Label class="hr-dark" row="4" col="0" colSpan="2"></Label>
+            <GridLayout row="5" col="0" columns="auto, auto" verticalAlignment="center">
+                <Label class="info-post" [text]="data.date" textAlignment="left" marginRight="5" textWrap="true" col="0"></Label>
+                <Label class="info-post" [text]="data.date" textAlignment="left" textWrap="true" col="1"></Label>
+            </GridLayout>
+            <Button text="Leer" row="6" col="1"></Button>
+        </GridLayout>
+    </StackLayout>
+</CardView>
