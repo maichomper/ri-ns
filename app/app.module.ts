@@ -12,6 +12,7 @@ import { HomeNewsComponent } from "./pages/home/home-news.component";
 import { FeaturedNewsComponent } from "./news/components/featured/featured-news.component";
 import { PuntosIesComponent } from "./news/components/puntos-ies/puntos-ies.component";
 import { RegularNewsCardComponent } from "./news/components/regular/regular-news-card.component";
+import { OpinionCardComponent } from "./news/components/opinion/opinion-card.component";
 // Card Components
 import { TemaTitleComponent } from "./news/components/card/tema-title.component";
 import { NewsTitleComponent } from "./news/components/card/news-title.component";
@@ -42,7 +43,8 @@ import { AuthorTitleComponent } from "./news/components/card/author-title.compon
         PuntosIesComponent,
         TemaTitleComponent,
         NewsTitleComponent,
-        AuthorTitleComponent
+        AuthorTitleComponent,
+        OpinionCardComponent
     ],
     providers: [
         

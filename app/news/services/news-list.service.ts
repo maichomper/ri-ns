@@ -17,11 +17,9 @@ export class NewsListService {
 
     loadHomeNews( section: string ){
         let apiURL = this.baseURL + this.getServiceURL( section );
-        console.log( apiURL );
         return this.http.get(apiURL)
             .map( res => {
                 let posts = res.json().map( ( post, index ) => {
-                    console.dir( post );
                     return new News(
                         post.id, 
                         post.title,
@@ -42,11 +40,10 @@ export class NewsListService {
     }
 
     private getServiceURL( section: string ){
-        console.log( section );
         switch( section ){
             case "layoutHome": return "ri/v1/layout-home";
             case "puntosIes": return "ri/v1/puntos-sobre-las-ies";
-            case "redes": return "ri/v1/columnas-opinion"
+            case "opinion": return "ri/v1/columnas-opinion"
         }
     }
 

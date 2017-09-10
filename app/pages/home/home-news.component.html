@@ -17,5 +17,15 @@
                 <puntos-ies [data]="item" [index]="i"></puntos-ies>
             </GridLayout>
         </ng-template>
+        <!-- Opinión -->
+        <ng-template nsTemplateKey="opinion" let-item="item" let-i="index">
+            <StackLayout>
+                <GridLayout *ngIf="0 === i" columns="*, 2*" paddingRight="14">
+                    <Label col="0" class="[ color-primary ][ title-section ]" [text]="'OPINIÓN'" textTransform="uppercase" textWrap="true" verticalAlignment="center"></Label>
+                    <Label col="1" class="[ tema-line ]" verticalAlignment="center"></Label>
+                </GridLayout>
+                <opinion-card [data]="item" [index]="i"></opinion-card>
+            </StackLayout>
+        </ng-template>
     </ListView>
 </StackLayout>

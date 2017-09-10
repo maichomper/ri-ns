@@ -1,0 +1,17 @@
+<CardView  class="primary-card" elevation="40" radius="10" > 
+    <StackLayout>
+        <GridLayout padding="14" rows="auto, auto, auto, auto, auto">
+            <Label row="0" class="[ color-primary ][ title-tema ]" [text]="data.tema" textAlignment="center" textTransform="uppercase" textWrap="true"></Label>
+            <Label row="1" class="[ title-post ]" [text]="data.title" textAlignment="center" textWrap="true"></Label>
+            <Label row="2" class="[ color-dark ][ excerpt ]" [text]="data.excerpt" textAlignment="center" textWrap="true"></Label>
+            <Label row="3" class="[ divider ]"></Label>
+            <GridLayout row="4" columns="14, *, 14, *, *" class="[ info ]">
+                <Image col="0" src="res://icon_calendar"></Image> 
+                <Label col="1" class="[ info ]" [text]="data.date" marginLeft="5" textWrap="true" verticalAlignment="center"></Label>
+                <Image col="2" src="res://icon_clock"></Image> 
+                <Label col="3" [text]="data.reading_time"  marginLeft="5" textWrap="true" verticalAlignment="center"></Label>
+                <Button col="4" class="[ btn btn-transparent ]" text="Leer"></Button>
+            </GridLayout>
+        </GridLayout>
+    </StackLayout>
+</CardView>

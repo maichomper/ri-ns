@@ -18,13 +18,12 @@ export class HomeNewsComponent implements OnInit {
 
 	constructor(private newsListService: NewsListService) {
 		this.homeSections.push('puntosIes');
-		this.homeSections.push('redes');
+		this.homeSections.push('opinion');
 	}
 
 	ngOnInit() {
 		this.isLoading = true;
 		this.newsListService.loadHomeNews( 'layoutHome' ).subscribe( (data) => {
-		//this.newsListService.loadHomeNews( 'puntosIes' ).subscribe( (data) => {
 			this.isLoading = false;
 			this.postList = data;
 		});
@@ -40,13 +39,15 @@ export class HomeNewsComponent implements OnInit {
 		if( "puntosIes" === item.section ){
 			return "puntosIes";
 		}
+		if( "opinion" === item.section ){
+			return "opinion";
+		}
 		return "secundaria";
     }
 
     loadMoreItems() {
     	if( ! this.isLoading && this.homeSections.length ){
     		this.isLoading = true;
-    		console.log( this.homeSections[0] );
     		this.newsListService.loadHomeNews( this.homeSections[0] ).subscribe( (data) => {
 	    		data.map( ( post ) => {
 	    			this.postList.push( post );
