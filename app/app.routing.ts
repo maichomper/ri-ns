@@ -5,10 +5,7 @@ import { Routes } from "@angular/router";
 import { HomeComponent } from "./pages/home/home.component"
 
 const routes: Routes = [
-    //{ path: "", redirectTo: "/items", pathMatch: "full" },
     { path: "", component: HomeComponent }
-    // { path: "items", component: ItemsComponent },
-    // { path: "item/:id", component: ItemDetailComponent },
 ];
 
 @NgModule({

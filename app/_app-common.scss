@@ -1,0 +1,118 @@
+// Import the theme’s variables. If you’re using a color scheme
+// other than “light”, switch the path to the alternative scheme,
+// for example '~nativescript-theme-core/scss/dark'.
+@import '~nativescript-theme-core/scss/light';
+
+// Customize any of the theme’s variables here, for instance $btn-color: red;
+
+// Import the theme’s main ruleset.
+@import '~nativescript-theme-core/scss/index';
+
+// Place any CSS rules you want to apply on both iOS and Android here.
+// This is where the vast majority of your CSS code goes.
+
+$margin-size: 30px;
+// Colors
+$primary: #0071BC;
+$gray: #8A8686;
+$dark: #000;
+$danger: #EC1D24;
+
+.color-primary {
+	color: $primary;
+}
+
+.color-dark {
+	color: $dark;
+}
+
+.color-danger {
+	color: $danger;
+}
+
+.background-gray {
+	background-color: #E4E4E4;
+}
+
+.featured-card {
+	margin-top: 	-$margin-size;
+	margin-right: 	$margin-size;
+	margin-left: 	$margin-size;
+	margin-bottom: 	$margin-size;
+}
+
+.primary-card {
+	margin: $margin-size;
+}
+
+.divider {
+	margin-top: 		$margin-size*2;
+	width: 				100%;
+	height: 			1;
+	background-color: 	$gray;
+}
+
+.btn {
+
+}
+.btn-transparent {
+	border-color: transparent;
+    border-width: 1;
+    border-bottom: 0;
+    font-weight: 700;
+}
+
+.tema-line {
+	width: 				100%;
+	height: 			2;
+	background-color: 	$primary;
+} 
+
+.title-post {
+	font-weight: 700;
+	font-size: 30px;
+	color: $dark;
+	margin-bottom: $margin-size;
+}
+
+.title-post-ies {
+	font-weight: 700;
+	font-size: 26px;
+	color: $dark;
+	margin-bottom: $margin-size;
+}
+
+.title-tema {
+	font-weight: 	700;
+	font-size: 		18px;
+	margin-top: 	$margin-size;
+	margin-bottom: 	$margin-size;
+	padding-left: 	$margin-size;
+	padding-right: 	$margin-size;
+}
+
+.author {
+	color: 			$gray;
+	font-size: 		14px;
+	margin-bottom: 	$margin-size;
+	text-align: 	center;
+}
+
+.excerpt {
+	font-size: 16px;
+}
+
+.info {
+	font-size: 14px;
+}
+
+.card-ies {
+	margin-top: 		$margin-size;
+	margin-right: 		$margin-size/2;
+	margin-left: 		$margin-size*2;
+	margin-bottom: 		$margin-size;
+}
+
+
+
+

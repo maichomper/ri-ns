@@ -5,9 +5,18 @@ import { AppComponent } from "./app.component";
 
 import { NativeScriptHttpModule } from "nativescript-angular/http";
 
+// Page Components
 import { HomeComponent } from "./pages/home/home.component";
-import { NotasPrincipalesComponent } from "./pages/home/notas-principales.component";
-import { NoticiaComponent } from "./pages/home/noticia.component";
+// News Components
+import { HomeNewsComponent } from "./pages/home/home-news.component";
+import { FeaturedNewsComponent } from "./news/components/featured/featured-news.component";
+import { PuntosIesComponent } from "./news/components/puntos-ies/puntos-ies.component";
+import { RegularNewsCardComponent } from "./news/components/regular/regular-news-card.component";
+// Card Components
+import { TemaTitleComponent } from "./news/components/card/tema-title.component";
+import { NewsTitleComponent } from "./news/components/card/news-title.component";
+import { AuthorTitleComponent } from "./news/components/card/author-title.component";
+
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -27,8 +36,13 @@ import { NoticiaComponent } from "./pages/home/noticia.component";
     declarations: [
         AppComponent,
         HomeComponent,
-        NotasPrincipalesComponent,
-        NoticiaComponent
+        HomeNewsComponent,
+        RegularNewsCardComponent,
+        FeaturedNewsComponent,
+        PuntosIesComponent,
+        TemaTitleComponent,
+        NewsTitleComponent,
+        AuthorTitleComponent
     ],
     providers: [
         

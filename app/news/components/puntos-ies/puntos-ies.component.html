@@ -1,0 +1,17 @@
+<StackLayout orientation="vertical" class="background-gray" margin="30">
+    <GridLayout *ngIf="'Antonio Navalón' === data.author" columns="auto, *">
+        <Image col="0" colSpan="1" src="res://titulo_puntos_sobre_las_ies"></Image> 
+    </GridLayout>
+    <GridLayout padding="14" rows="auto, auto, auto, auto, auto, auto">
+        <Image *ngIf="'Antonio Navalón' === data.author" row="0" colSpan="1" src="res://antonio" width="50%"></Image> 
+        <Image *ngIf="'Antonio Navalón' !== data.author" row="0" colSpan="1" src="res://ramon" width="50%"></Image> 
+        <Label row="1" class="[ title-post-ies ]" [text]="data.author" textAlignment="center" textWrap="true"></Label>
+        <Label *ngIf="'Antonio Navalón' === data.author" row="2" class="[ author ]" [text]="'@antonio_navalon'" textAlignment="center" textWrap="true"></Label>
+        <Label *ngIf="'Antonio Navalón' !== data.author" row="2" class="[ author ]" [text]="'@ramon_alberto'" textAlignment="center" textWrap="true"></Label>
+        <Label row="3" class="[ title-post-ies ]" [text]="data.title" textAlignment="center" textWrap="true"></Label>
+        <Label row="4" class="[ color-dark ]" [text]="data.excerpt" textWrap="true"></Label>
+        <Button row="5" class="[ btn btn-transparent ][ color-danger ]" text="Leer" textAlignment="center"></Button>
+    </GridLayout>
+</StackLayout>
+
+

@@ -1,0 +1,21 @@
+<StackLayout orientation="vertical"> 
+    <ListView [items]="postList" class="small-spacing" [itemTemplateSelector]="templateSelector" (loadMoreItems)="loadMoreItems()">
+        <!-- Layout Home -->
+        <ng-template let-item="item" nsTemplateKey="primaria">
+            <GridLayout rows="*, *">
+                <featured-news [data]="item"></featured-news>
+            </GridLayout>
+        </ng-template>
+        <ng-template let-item="item" nsTemplateKey="secundaria">
+            <GridLayout>
+                <regular-news-card [data]="item"></regular-news-card>
+            </GridLayout>
+        </ng-template>
+        <!-- Puntos sobre las Íes -->
+        <ng-template nsTemplateKey="puntosIes" let-item="item" let-i="index">
+            <GridLayout class="card-ies" elevation="40" radius="10">
+                <puntos-ies [data]="item" [index]="i"></puntos-ies>
+            </GridLayout>
+        </ng-template>
+    </ListView>
+</StackLayout>
