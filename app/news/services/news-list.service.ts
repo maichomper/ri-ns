@@ -41,6 +41,7 @@ export class NewsListService {
 
     private getServiceURL( section: string ){
         switch( section ){
+            case "ultimoMomento": return "ri/v1/ultimo-momento";
             case "layoutHome": return "ri/v1/layout-home";
             case "puntosIes": return "ri/v1/puntos-sobre-las-ies";
             case "opinion": return "ri/v1/columnas-opinion"
