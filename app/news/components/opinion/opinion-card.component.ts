@@ -9,5 +9,7 @@ import { News } from "../../news";
 export class OpinionCardComponent {
 	@Input() data: News;
 	@Input() index: number;
-	constructor() {}
+	constructor() {
+		//console.log( this.data.position );
+	}
 }

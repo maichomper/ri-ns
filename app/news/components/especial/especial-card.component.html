@@ -1,0 +1,11 @@
+<CardView  class="primary-card" elevation="40" radius="10" >
+    <StackLayout>
+        <Image [src]="data.imageUrl" stretch="aspectFit"></Image>
+        <GridLayout padding="14" rows="*, auto">
+            <Label row="0" class="[ title-post ]" [text]="data.title" textAlignment="center" textWrap="true"></Label>
+            <GridLayout row="1">
+               <Label *ngFor="let post of data.posts; let i = index" [text]="post.title" [row]="i"></Label> 
+            </GridLayout>
+        </GridLayout>
+    </StackLayout>
+</CardView>

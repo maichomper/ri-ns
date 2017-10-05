@@ -1,7 +1,4 @@
-<StackLayout orientation="vertical" class="background-gray" margin="30">
-    <GridLayout *ngIf="'Antonio Navalón' === data.author" columns="auto, *">
-        <Image col="0" colSpan="1" src="res://titulo_puntos_sobre_las_ies"></Image> 
-    </GridLayout>
+<StackLayout orientation="vertical" class="background-gray" margin="10">
     <GridLayout padding="14" rows="auto, auto, auto, auto, auto, auto">
         <Image *ngIf="'Antonio Navalón' === data.author" row="0" colSpan="1" src="res://antonio" width="50%"></Image> 
         <Image *ngIf="'Antonio Navalón' !== data.author" row="0" colSpan="1" src="res://ramon" width="50%"></Image> 

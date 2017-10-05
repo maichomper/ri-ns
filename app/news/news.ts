@@ -11,6 +11,7 @@ export class News {
 		public reading_time: string,
 		public hierarchy: string,
 		public type: string,
-		public section: string
+		public section: string,
+		public position: number
 	){}
 }

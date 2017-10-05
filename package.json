@@ -7,6 +7,9 @@
     "id": "org.nativescript.Indigo",
     "tns-android": {
       "version": "3.1.1"
+    },
+    "tns-ios": {
+      "version": "3.2.0"
     }
   },
   "dependencies": {
@@ -20,6 +23,7 @@
     "@angular/router": "~4.2.0",
     "nativescript-angular": "~4.2.0",
     "nativescript-cardview": "^2.0.2",
+    "nativescript-pro-ui": "^3.1.4",
     "nativescript-theme-core": "^1.0.4",
     "reflect-metadata": "~0.1.8",
     "rxjs": "~5.4.2",

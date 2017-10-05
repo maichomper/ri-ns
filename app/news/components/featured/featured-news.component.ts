@@ -10,7 +10,5 @@ export class FeaturedNewsComponent implements OnInit {
 	@Input() data: News;
 	constructor() {}
 
-	ngOnInit() {
-		console.log('cargando featured: ' + this.data.title);
-	}
+	ngOnInit() {}
 }

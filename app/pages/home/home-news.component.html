@@ -13,18 +13,49 @@
         </ng-template>
         <!-- Puntos sobre las Íes -->
         <ng-template nsTemplateKey="puntosIes" let-item="item" let-i="index">
-            <GridLayout class="card-ies" elevation="40" radius="10">
+            <StackLayout class="background-gray">
+                <GridLayout *ngIf="1 === item.position" columns="auto, *" marginTop="20">
+                    <Image col="0" colSpan="1" src="res://titulo_puntos_sobre_las_ies"></Image> 
+                </GridLayout>
                 <puntos-ies [data]="item" [index]="i"></puntos-ies>
-            </GridLayout>
+            </StackLayout>
         </ng-template>
         <!-- Opinión -->
         <ng-template nsTemplateKey="opinion" let-item="item" let-i="index">
             <StackLayout>
-                <GridLayout *ngIf="0 === i" columns="*, 2*" paddingRight="14">
+                <GridLayout *ngIf="1 === item.position" columns="*, 2*" paddingRight="14">
                     <Label col="0" class="[ color-primary ][ title-section ]" [text]="'OPINIÓN'" textTransform="uppercase" textWrap="true" verticalAlignment="center"></Label>
                     <Label col="1" class="[ tema-line ]" verticalAlignment="center"></Label>
                 </GridLayout>
                 <opinion-card [data]="item" [index]="i"></opinion-card>
+            </StackLayout>
+        </ng-template>
+        <!-- Salida de Emergencia -->
+        <ng-template nsTemplateKey="salidaEmergencia" let-item="item" let-i="index">
+            <StackLayout>
+                <GridLayout *ngIf="1 === item.position" columns="*, 2*" paddingRight="14">
+                    <Label col="0" class="[ color-primary ][ title-section ]" [text]="'SALIDA DE EMERGENCIA'" textTransform="uppercase" textWrap="true" verticalAlignment="center"></Label>
+                    <Label col="1" class="[ tema-line ]" verticalAlignment="center"></Label>
+                </GridLayout>
+                <salida-emergencia-card [data]="item" [index]="i"></salida-emergencia-card>
+            </StackLayout>
+        </ng-template>
+        <!-- Documento Índigo -->
+        <ng-template nsTemplateKey="documentoIndigo" let-item="item" let-i="index">
+            <StackLayout>
+                <GridLayout *ngIf="1 === item.position" columns="*" paddingRight="14">
+                    <Image col="0" src="res://documento_indigo" horizontalAlignment="center" width="80%"></Image> 
+                </GridLayout>
+                <documento-indigo-card [data]="item" [index]="i"></documento-indigo-card>
+            </StackLayout>
+        </ng-template>
+        <!-- Especial -->
+        <ng-template nsTemplateKey="especial" let-item="item" let-i="index">
+            <StackLayout>
+                <GridLayout *ngIf="1 === item.position" columns="*" paddingRight="14">
+                    <Image col="0" src="res://documento_indigo" horizontalAlignment="center" width="80%"></Image> 
+                </GridLayout>
+                <especial-card [data]="item"></especial-card>
             </StackLayout>
         </ng-template>
     </ListView>

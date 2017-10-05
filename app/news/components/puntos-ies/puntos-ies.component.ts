@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 import { News } from "../../news";
 
@@ -7,12 +7,8 @@ import { News } from "../../news";
     templateUrl: "news/components/puntos-ies/puntos-ies.component.html",
     //template: `<Label [text]="Hola"></Label>`
 })
-export class PuntosIesComponent implements OnInit {
+export class PuntosIesComponent {
 	@Input() data: News;
 	@Input() index: number;
 	constructor() {}
-
-	ngOnInit() {
-		console.log('cargando ies: ' + this.data.title + '-' + this.index);
-	}
 }

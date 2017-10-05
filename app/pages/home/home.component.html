@@ -1,6 +1,36 @@
-<ActionBar title="Home" class="action-bar">
+<ActionBar title="Home">
+	<GridLayout columns="*, *, *">
+		<NavigationButton col="0" icon="res://ic_menu" (tap)="openDrawer()" class="action-image"></NavigationButton>
+		<Image col="1" src="res://logo_header" class="action-image"></Image>
+		<NavigationButton col="2" icon="res://ic_menu" (tap)="openDrawer()" class="action-image"></NavigationButton>
+	</GridLayout>
 </ActionBar>
- 
-<StackLayout>
-	<home-news></home-news>
-</StackLayout>
+<RadSideDrawer showOverNavigation="true" tkExampleTitle tkToggleNavButton>
+    <StackLayout tkDrawerContent class="sideStackLayout">
+        <StackLayout class="sideTitleStackLayout">
+            <Image src="res://logo_header" class="action-image"></Image>
+        </StackLayout>
+        <StackLayout class="sideStackLayout">
+            <Label text="Portada" class="sideLabel sideLabelActive"></Label>
+            <Label text="Reporte" class="sideLabel"></Label>
+            <Label text="Opinión" class="sideLabel"></Label>
+            <Label text="Latitud" class="sideLabel"></Label>
+            <Label text="Indigonómics" class="sideLabel"></Label>
+            <Label text="Piensa" class="sideLabel"></Label>
+            <Label text="Fan" class="sideLabel"></Label>
+            <Label text="Indigo Videos" class="sideLabel"></Label>
+            <Label text="Deslgose" class="sideLabel"></Label>
+        </StackLayout>
+        <Label text="Redes Sociales" color="white" padding="10" style="horizontal-align: center"></Label>
+        <GridLayout class="sideTitleStackLayout" columns="*, *, *, *">
+            <Image col="0" src="res://ic_menu" class="action-image"></Image>
+            <Image col="1" src="res://ic_menu" class="action-image"></Image>
+            <Image col="2" src="res://ic_menu" class="action-image"></Image>
+            <Image col="3" src="res://ic_menu" class="action-image"></Image>
+        </GridLayout>
+        <Label text="Close Drawer" color="lightgray" padding="10" style="horizontal-align: center" (tap)="onCloseDrawerTap()"></Label>
+    </StackLayout>
+    <StackLayout tkMainContent>
+        <home-news></home-news>
+    </StackLayout>
+</RadSideDrawer>

@@ -43,5 +43,24 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+	    <key>NSExceptionDomains</key>
+	    <dict>
+	        <key>http://pcuervo.com</key>
+	        <dict>
+	        	<key>NSIncludesSubdomains</key>
+            	<true/>
+	            <key>NSThirdPartyExceptionAllowsInsecureHTTPLoads</key>
+	            <true/>
+	            <key>NSTemporaryExceptionMinimumTLSVersion</key>
+            	<string>TLSv1.1</string>
+	        </dict>
+	    </dict>
+	</dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>  
+      	<key>NSAllowsArbitraryLoads</key><true/>  
+ 	</dict>
 </dict>
 </plist>

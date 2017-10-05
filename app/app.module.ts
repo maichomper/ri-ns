@@ -5,6 +5,9 @@ import { AppComponent } from "./app.component";
 
 import { NativeScriptHttpModule } from "nativescript-angular/http";
 
+// NativeScript UI
+import { NativeScriptUISideDrawerModule } from "nativescript-pro-ui/sidedrawer/angular";
+import { NativeScriptUIListViewModule } from "nativescript-pro-ui/listview/angular";
 // Page Components
 import { HomeComponent } from "./pages/home/home.component";
 // News Components
@@ -13,17 +16,13 @@ import { FeaturedNewsComponent } from "./news/components/featured/featured-news.
 import { PuntosIesComponent } from "./news/components/puntos-ies/puntos-ies.component";
 import { RegularNewsCardComponent } from "./news/components/regular/regular-news-card.component";
 import { OpinionCardComponent } from "./news/components/opinion/opinion-card.component";
+import { SalidaEmergenciaCardComponent } from "./news/components/salida-emergencia/salida-emergencia-card.component";
+import { DocumentoIndigoCardComponent } from "./news/components/documento-indigo/documento-indigo-card.component";
+import { EspecialCardComponent } from "./news/components/especial/especial-card.component";
 // Card Components
 import { TemaTitleComponent } from "./news/components/card/tema-title.component";
 import { NewsTitleComponent } from "./news/components/card/news-title.component";
 import { AuthorTitleComponent } from "./news/components/card/author-title.component";
-
-
-// Uncomment and add to NgModule imports if you need to use two-way binding
-// import { NativeScriptFormsModule } from "nativescript-angular/forms";
-
-// Uncomment and add to NgModule imports  if you need to use the HTTP wrapper
-// import { NativeScriptHttpModule } from "nativescript-angular/http";
 
 @NgModule({
     bootstrap: [
@@ -32,7 +31,9 @@ import { AuthorTitleComponent } from "./news/components/card/author-title.compon
     imports: [
         NativeScriptModule,
         AppRoutingModule,
-        NativeScriptHttpModule
+        NativeScriptHttpModule,
+        NativeScriptUISideDrawerModule,
+        NativeScriptUIListViewModule
     ],
     declarations: [
         AppComponent,
@@ -44,7 +45,10 @@ import { AuthorTitleComponent } from "./news/components/card/author-title.compon
         TemaTitleComponent,
         NewsTitleComponent,
         AuthorTitleComponent,
-        OpinionCardComponent
+        OpinionCardComponent,
+        SalidaEmergenciaCardComponent,
+        DocumentoIndigoCardComponent,
+        EspecialCardComponent
     ],
     providers: [
         
