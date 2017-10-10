@@ -29,6 +29,7 @@ import { FanCardComponent } from "./news/components/fan/fan-card.component";
 import { SeleccionEditorCardComponent } from "./news/components/seleccion-editor/seleccion-editor-card.component";
 import { LoMasVistoCardComponent } from "./news/components/lo-mas-visto/lo-mas-visto-card.component";
 import { DesgloseCardComponent } from "./news/components/desglose/desglose-card.component";
+import { UltimoMomentoCardComponent } from "./news/components/ultimo-momento/ultimo-momento-card.component";
 // Card Components
 import { TemaTitleComponent } from "./news/components/card/tema-title.component";
 import { NewsTitleComponent } from "./news/components/card/news-title.component";
@@ -68,7 +69,8 @@ import { AuthorTitleComponent } from "./news/components/card/author-title.compon
         FanCardComponent,
         SeleccionEditorCardComponent,
         LoMasVistoCardComponent,
-        DesgloseCardComponent
+        DesgloseCardComponent,
+        UltimoMomentoCardComponent
     ],
     providers: [
         

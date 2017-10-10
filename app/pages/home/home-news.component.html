@@ -1,5 +1,9 @@
 <StackLayout orientation="vertical"> 
     <ListView [items]="postList" class="small-spacing" [itemTemplateSelector]="templateSelector" (loadMoreItems)="loadMoreItems()">
+        <!-- Último Momento -->
+        <ng-template nsTemplateKey="ultimoMomento" let-item="item" let-i="index">
+            <ultimo-momento-card [data]="item" padding="14"></ultimo-momento-card>
+        </ng-template>
         <!-- Layout Home -->
         <ng-template let-item="item" nsTemplateKey="primaria">
             <GridLayout rows="*, *">

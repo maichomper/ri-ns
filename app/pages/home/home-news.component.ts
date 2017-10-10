@@ -18,8 +18,7 @@ export class HomeNewsComponent implements OnInit {
 	homeSections: Array<string> = [];
 
 	constructor(private newsListService: NewsListService) {
-		this.homeSections.push('desglose');
-
+		this.homeSections.push('layoutHome');
 		this.homeSections.push('puntosIes');
 		this.homeSections.push('opinion');
 		this.homeSections.push('salidaEmergencia');
@@ -31,13 +30,14 @@ export class HomeNewsComponent implements OnInit {
 		this.homeSections.push('latitud');
 		this.homeSections.push('loMasVisto');
 		this.homeSections.push('indigonomics');
+		this.homeSections.push('desglose');
 		this.homeSections.push('piensa');
 		this.homeSections.push('fan');
 	}
 
 	ngOnInit() {
 		this.isLoading = true;
-		this.newsListService.loadHomeNews( 'layoutHome' ).subscribe( (data) => {
+		this.newsListService.loadHomeNews( 'ultimoMomento' ).subscribe( (data) => {
 			this.isLoading = false;
 			this.postList = data;
 		});

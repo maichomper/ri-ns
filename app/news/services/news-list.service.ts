@@ -88,6 +88,7 @@ export class NewsListService {
             case "seleccionEditor": return "ri/v1/seleccion-del-editor";
             case "loMasVisto": return "ri/v1/lo-mas-visto";
             case "desglose": return "wp/v2/desglose?per_page=1";
+            case "ultimoMomento": return "ri/v1/ultimo-momento";
         }
     }
 
