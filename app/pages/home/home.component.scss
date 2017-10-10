@@ -1,13 +1,8 @@
 $primary: #0071BC;
 
-ActionBar {
+.header{
+    height: 50; 
     background-color: $primary;
-}
-
-.action-image {
-    width: 100;
-    height: 100;
-    vertical-align: center;
 }
 
 // SideDrawer 

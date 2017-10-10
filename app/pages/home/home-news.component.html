@@ -24,7 +24,7 @@
         <ng-template nsTemplateKey="opinion" let-item="item" let-i="index">
             <StackLayout>
                 <GridLayout *ngIf="1 === item.position" columns="*, 2*" paddingRight="14">
-                    <Label col="0" class="[ color-primary ][ title-section ]" [text]="'OPINIÓN'" textTransform="uppercase" textWrap="true" verticalAlignment="center"></Label>
+                    <Label col="0" class="[ color-primary ][ title-section ]" [text]="'OPINIÓN'" textWrap="true" verticalAlignment="center"></Label>
                     <Label col="1" class="[ tema-line ]" verticalAlignment="center"></Label>
                 </GridLayout>
                 <opinion-card [data]="item" [index]="i"></opinion-card>
@@ -33,8 +33,8 @@
         <!-- Salida de Emergencia -->
         <ng-template nsTemplateKey="salidaEmergencia" let-item="item" let-i="index">
             <StackLayout>
-                <GridLayout *ngIf="1 === item.position" columns="*, 2*" paddingRight="14">
-                    <Label col="0" class="[ color-primary ][ title-section ]" [text]="'SALIDA DE EMERGENCIA'" textTransform="uppercase" textWrap="true" verticalAlignment="center"></Label>
+                <GridLayout *ngIf="1 === item.position" columns="3*, *" paddingRight="14">
+                    <Label col="0" class="[ color-primary ][ title-section ]" [text]="'SALIDA DE EMERGENCIA'" textWrap="true" verticalAlignment="center"></Label>
                     <Label col="1" class="[ tema-line ]" verticalAlignment="center"></Label>
                 </GridLayout>
                 <salida-emergencia-card [data]="item" [index]="i"></salida-emergencia-card>
@@ -43,19 +43,96 @@
         <!-- Documento Índigo -->
         <ng-template nsTemplateKey="documentoIndigo" let-item="item" let-i="index">
             <StackLayout>
-                <GridLayout *ngIf="1 === item.position" columns="*" paddingRight="14">
-                    <Image col="0" src="res://documento_indigo" horizontalAlignment="center" width="80%"></Image> 
-                </GridLayout>
+                <Image *ngIf="1 === item.position" col="0" src="res://documento_indigo" horizontalAlignment="center" width="80%"></Image> 
                 <documento-indigo-card [data]="item" [index]="i"></documento-indigo-card>
             </StackLayout>
         </ng-template>
         <!-- Especial -->
         <ng-template nsTemplateKey="especial" let-item="item" let-i="index">
             <StackLayout>
-                <GridLayout *ngIf="1 === item.position" columns="*" paddingRight="14">
-                    <Image col="0" src="res://documento_indigo" horizontalAlignment="center" width="80%"></Image> 
-                </GridLayout>
+                <Image *ngIf="1 === item.position" col="0" src="res://titulo_especial" horizontalAlignment="center" width="80%"></Image> 
                 <especial-card [data]="item"></especial-card>
+            </StackLayout>
+        </ng-template>
+        <!-- Índigo TV -->
+        <ng-template nsTemplateKey="indigoTv" let-item="item" let-i="index">
+            <StackLayout>
+                <GridLayout *ngIf="1 === item.position" columns="2*, 3*" paddingRight="14">
+                    <Label col="0" class="[ color-primary ][ title-section ]" [text]="'ÍNDIGO TV'" textWrap="true" verticalAlignment="center"></Label>
+                    <Label col="1" class="[ tema-line ]" verticalAlignment="center"></Label>
+                </GridLayout>
+                <indigo-tv-card [data]="item"></indigo-tv-card>
+            </StackLayout>
+        </ng-template>
+        <!-- Selección del Editor -->
+        <ng-template nsTemplateKey="seleccionEditor" let-item="item" let-i="index">
+            <StackLayout  class="background-black">
+                <Image *ngIf="1 === item.position" col="0" src="res://titulo_seleccion_editor" horizontalAlignment="center" width="80%"></Image> 
+                <seleccion-editor-card [data]="item" [index]="i"></seleccion-editor-card>
+            </StackLayout>
+        </ng-template>
+        <!-- Reporte -->
+        <ng-template nsTemplateKey="reporte" let-item="item" let-i="index">
+            <StackLayout>
+                <GridLayout *ngIf="1 === item.position" columns="*, 2*" paddingRight="14">
+                    <Label col="0" class="[ color-primary ][ title-section ]" [text]="'REPORTE'" textWrap="true" verticalAlignment="center"></Label>
+                    <Label col="1" class="[ tema-line ]" verticalAlignment="center"></Label>
+                </GridLayout>
+                <reporte-card [data]="item"></reporte-card>
+            </StackLayout>
+        </ng-template>
+        <!-- Latitud -->
+        <ng-template nsTemplateKey="latitud" let-item="item" let-i="index">
+            <StackLayout>
+                <GridLayout *ngIf="1 === item.position" columns="*, 2*" paddingRight="14">
+                    <Label col="0" class="[ color-primary ][ title-section ]" [text]="'LATITUD'" textWrap="true" verticalAlignment="center"></Label>
+                    <Label col="1" class="[ tema-line ]" verticalAlignment="center"></Label>
+                </GridLayout>
+                <latitud-card [data]="item"></latitud-card>
+            </StackLayout>
+        </ng-template>
+        <!-- Lo Más Visto -->
+        <ng-template nsTemplateKey="loMasVisto" let-item="item" let-i="index">
+            <StackLayout>
+                <Image *ngIf="1 === item.position" col="0" src="res://titulo_seleccion_editor" horizontalAlignment="center" width="80%"></Image> 
+                <lo-mas-visto-card [data]="item" [index]="i"></lo-mas-visto-card>
+            </StackLayout>
+        </ng-template>
+        <!-- Indigonomics -->
+        <ng-template nsTemplateKey="indigonomics" let-item="item" let-i="index">
+            <StackLayout>
+                <GridLayout *ngIf="1 === item.position" columns="*, *" paddingRight="14">
+                    <Label col="0" class="[ color-primary ][ title-section ]" [text]="'INDIGONOMICS'" textWrap="true" verticalAlignment="center"></Label>
+                    <Label col="1" class="[ tema-line ]" verticalAlignment="center"></Label>
+                </GridLayout>
+                <indigonomics-card [data]="item"></indigonomics-card>
+            </StackLayout>
+        </ng-template>
+        <!-- Desglose -->
+        <ng-template nsTemplateKey="desglose" let-item="item" let-i="index">
+            <StackLayout>
+                <Image *ngIf="1 === item.position" col="0" src="res://titulo_seleccion_editor" horizontalAlignment="center" width="80%"></Image> 
+                <desglose-card [data]="item"></desglose-card>
+            </StackLayout>
+        </ng-template>
+        <!-- Piensa -->
+        <ng-template nsTemplateKey="piensa" let-item="item" let-i="index">
+            <StackLayout>
+                <GridLayout *ngIf="1 === item.position" columns="*, 2*" paddingRight="14">
+                    <Label col="0" class="[ color-primary ][ title-section ]" [text]="'PIENSA'" textWrap="true" verticalAlignment="center"></Label>
+                    <Label col="1" class="[ tema-line ]" verticalAlignment="center"></Label>
+                </GridLayout>
+                <piensa-card [data]="item"></piensa-card>
+            </StackLayout>
+        </ng-template>
+        <!-- Fan -->
+        <ng-template nsTemplateKey="fan" let-item="item" let-i="index">
+            <StackLayout>
+                <GridLayout *ngIf="1 === item.position" columns="*, 2*" paddingRight="14">
+                    <Label col="0" class="[ color-primary ][ title-section ]" [text]="'FAN'" textWrap="true" verticalAlignment="center"></Label>
+                    <Label col="1" class="[ tema-line ]" verticalAlignment="center"></Label>
+                </GridLayout>
+                <fan-card [data]="item"></fan-card>
             </StackLayout>
         </ng-template>
     </ListView>

@@ -1,0 +1,11 @@
+<GridLayout padding="14" columns="2*, 3*">
+    <StackLayout col="0" *ngIf="'' !== data.imageUrl">
+        <Image [src]="data.imageUrl" stretch="fill" *ngIf="'' !== data.imageUrl"></Image>
+    </StackLayout>
+    <StackLayout col="1" rows="auto, auto, auto, auto" paddingLeft="14">
+        <Label row="0" class="[ color-primary ]" [text]="data.tema" textTransform="uppercase" textWrap="true" fontWeight="700" fontSize="18px"></Label>
+        <Label row="1" [text]="data.title" textWrap="true" color="#FFF" fontWeight="700" fontSize="24px"></Label>
+        <Label row="2" class="[ excerpt ]" [text]="data.excerpt" textWrap="true" color="#FFF"></Label>
+        <Button row="3" class="[ btn btn-transparent ]" text="Leer"></Button>
+    </StackLayout> 
+</GridLayout>

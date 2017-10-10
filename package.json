@@ -5,10 +5,10 @@
   "repository": "<fill-your-repository-here>",
   "nativescript": {
     "id": "org.nativescript.Indigo",
-    "tns-android": {
-      "version": "3.1.1"
-    },
     "tns-ios": {
+      "version": "3.2.0"
+    },
+    "tns-android": {
       "version": "3.2.0"
     }
   },
@@ -22,7 +22,8 @@
     "@angular/platform-browser": "~4.2.0",
     "@angular/router": "~4.2.0",
     "nativescript-angular": "~4.2.0",
-    "nativescript-cardview": "^2.0.2",
+    "nativescript-cardview": "^2.0.3",
+    "nativescript-image-cache": "^1.0.8",
     "nativescript-pro-ui": "^3.1.4",
     "nativescript-theme-core": "^1.0.4",
     "reflect-metadata": "~0.1.8",

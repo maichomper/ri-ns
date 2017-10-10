@@ -1,0 +1,23 @@
+<CardView  class="primary-card" elevation="40" radius="10" ios:backgroundColor="#FFF" shadowColor="#CCCCCC" shadowOpacity="2">
+    <StackLayout>
+        <Image [src]="data.imageUrl" stretch="aspectFit"></Image>
+        <GridLayout padding="14" rows="auto, auto, auto, auto, auto, auto">
+            <GridLayout row="0" columns="*, auto, *" *ngIf="'' !== data.tema">
+                <Label col="0" class="[ tema-line ]" verticalAlignment="center" ></Label>
+                <Label col="1" class="[ color-primary ][ title-tema ]" [text]="data.tema" textAlignment="center" textTransform="uppercase" textWrap="true"></Label>
+                <Label col="2" class="[ tema-line ]" verticalAlignment="center"></Label>
+            </GridLayout>
+            <Label row="1" class="[ title-post ]" [text]="data.title" textAlignment="center" textWrap="true"></Label>
+            <Label row="2" class="[ author ]" [text]="data.author" textWrap="true"></Label>
+            <Label row="3" class="[ color-dark ][ excerpt ]" [text]="data.excerpt" textAlignment="center" textWrap="true"></Label>
+            <Label row="4" class="[ divider ]"></Label>
+            <GridLayout row="5" columns="14, *, 14, *, *" class="[ info ]">
+                <Image col="0" src="res://ic_calendar"></Image> 
+                <Label col="1" class="[ info ]" [text]="data.date" marginLeft="5" textWrap="true" verticalAlignment="center"></Label>
+                <Image col="2" src="res://ic_clock"></Image> 
+                <Label col="3" [text]="data.reading_time"  marginLeft="5" textWrap="true" verticalAlignment="center"></Label>
+                <Button col="4" class="[ btn btn-transparent ]" text="Leer"></Button>
+            </GridLayout>
+        </GridLayout>
+    </StackLayout>
+</CardView>

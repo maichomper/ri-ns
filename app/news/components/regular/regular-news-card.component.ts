@@ -8,6 +8,5 @@ import { News } from "../../news";
 })
 export class RegularNewsCardComponent {
 	@Input() data: News;
-	@Input() index: number;
 	constructor() {}
 }

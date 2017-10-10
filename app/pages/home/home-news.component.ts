@@ -8,6 +8,7 @@ import { NewsListService } from "../../news/services/news-list.service";
     templateUrl: "pages/home/home-news.component.html",
     providers: [NewsListService]
 })
+
 /**
  * Contains properties of a Person.
  */
@@ -17,11 +18,21 @@ export class HomeNewsComponent implements OnInit {
 	homeSections: Array<string> = [];
 
 	constructor(private newsListService: NewsListService) {
-		this.homeSections.push('especial');
+		this.homeSections.push('desglose');
+
 		this.homeSections.push('puntosIes');
 		this.homeSections.push('opinion');
 		this.homeSections.push('salidaEmergencia');
 		this.homeSections.push('documentoIndigo');
+		this.homeSections.push('especial');
+		this.homeSections.push('indigoTv');
+		this.homeSections.push('seleccionEditor');
+		this.homeSections.push('reporte');
+		this.homeSections.push('latitud');
+		this.homeSections.push('loMasVisto');
+		this.homeSections.push('indigonomics');
+		this.homeSections.push('piensa');
+		this.homeSections.push('fan');
 	}
 
 	ngOnInit() {
@@ -39,22 +50,7 @@ export class HomeNewsComponent implements OnInit {
 		if( "secundaria" === item.hierarchy && "layoutHome" === item.section  ) {
 			return "secundaria";
 		}
-		if( "puntosIes" === item.section ){
-			return "puntosIes";
-		}
-		if( "opinion" === item.section ){
-			return "opinion";
-		}
-		if( "salidaEmergencia" === item.section ){
-			return "salidaEmergencia";
-		}
-		if( "documentoIndigo" === item.section ){
-			return "documentoIndigo";
-		}
-		if( "especial" === item.section ){
-			return "especial";
-		}
-		return "secundaria";
+		return item.section;
     }
 
     loadMoreItems() {
@@ -62,16 +58,24 @@ export class HomeNewsComponent implements OnInit {
     		this.isLoading = true;
     		if( 'especial' == this.homeSections[0] ){
     			this.newsListService.loadHomeEspecial().subscribe( (post) => {
-    				console.dir(post);
 		    		this.postList.push( post );
 		    		this.homeSections.splice(0,1);
-					this.isLoading = false;
+					this.isLoading = false; 
 				});
 				return;
     		}
+    // 		if( 'loMasVisto' == this.homeSections[0] ){
+    // 			this.newsListService.loadHomeLoMasVisto().subscribe( (post) => {
+		  //   		this.postList.push( post );
+		  //   		this.homeSections.splice(0,1);
+				// 	this.isLoading = false;
+				// });
+				// return;
+    // 		}
     		this.newsListService.loadHomeNews( this.homeSections[0] ).subscribe( (data) => {
 	    		data.map( ( post ) => {
 	    			this.postList.push( post );
+	    			
 	    		});
 	    		this.homeSections.splice(0,1);
 				this.isLoading = false;

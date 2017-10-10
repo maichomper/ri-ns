@@ -3,6 +3,7 @@ import * as elementRegistryModule from 'nativescript-angular/element-registry';
 elementRegistryModule.registerElement("CardView", () => require("nativescript-cardview").CardView);
 import { RadSideDrawerComponent, SideDrawerType } from "nativescript-pro-ui/sidedrawer/angular";
 import { RadSideDrawer } from 'nativescript-pro-ui/sidedrawer';
+import {Page} from "ui/page";
 
 @Component({
 	moduleId: module.id,
@@ -15,7 +16,9 @@ export class HomeComponent implements AfterViewInit, OnInit {
 	@ViewChild(RadSideDrawerComponent) public drawerComponent: RadSideDrawerComponent;
     private drawer: RadSideDrawer;
 
-    constructor(private _changeDetectionRef: ChangeDetectorRef) { }
+    constructor(private _changeDetectionRef: ChangeDetectorRef, page: Page) {
+        page.actionBarHidden = true;
+    }
 
     ngAfterViewInit() {
         this.drawer = this.drawerComponent.sideDrawer;

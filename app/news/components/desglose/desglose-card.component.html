@@ -1,0 +1,9 @@
+<StackLayout backgroundColor="#0093D0">
+    <StackLayout *ngIf="'' !== data.imageUrl">
+        <Image [src]="data.imageUrl" stretch="aspectFit" *ngIf="'' !== data.imageUrl"></Image>
+    </StackLayout>
+    <GridLayout padding="14" rows="auto, auto">
+        <Label row="0" class="[ title-post ]" [text]="data.title" textAlignment="center" textWrap="true" color="#FFF"></Label>
+        <Label row="1" class="[ excerpt ]" color="#FFF" [text]="data.excerpt" textAlignment="center" textWrap="true"></Label>
+    </GridLayout>
+</StackLayout>

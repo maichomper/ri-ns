@@ -9,6 +9,7 @@ import { NativeScriptHttpModule } from "nativescript-angular/http";
 import { NativeScriptUISideDrawerModule } from "nativescript-pro-ui/sidedrawer/angular";
 import { NativeScriptUIListViewModule } from "nativescript-pro-ui/listview/angular";
 // Page Components
+import { HeaderComponent } from "./pages/navigation/header.component";
 import { HomeComponent } from "./pages/home/home.component";
 // News Components
 import { HomeNewsComponent } from "./pages/home/home-news.component";
@@ -19,6 +20,15 @@ import { OpinionCardComponent } from "./news/components/opinion/opinion-card.com
 import { SalidaEmergenciaCardComponent } from "./news/components/salida-emergencia/salida-emergencia-card.component";
 import { DocumentoIndigoCardComponent } from "./news/components/documento-indigo/documento-indigo-card.component";
 import { EspecialCardComponent } from "./news/components/especial/especial-card.component";
+import { IndigoTvCardComponent } from "./news/components/indigo-tv/indigo-tv-card.component";
+import { ReporteCardComponent } from "./news/components/reporte/reporte-card.component";
+import { LatitudCardComponent } from "./news/components/latitud/latitud-card.component";
+import { IndigonomicsCardComponent } from "./news/components/indigonomics/indigonomics-card.component";
+import { PiensaCardComponent } from "./news/components/piensa/piensa-card.component";
+import { FanCardComponent } from "./news/components/fan/fan-card.component";
+import { SeleccionEditorCardComponent } from "./news/components/seleccion-editor/seleccion-editor-card.component";
+import { LoMasVistoCardComponent } from "./news/components/lo-mas-visto/lo-mas-visto-card.component";
+import { DesgloseCardComponent } from "./news/components/desglose/desglose-card.component";
 // Card Components
 import { TemaTitleComponent } from "./news/components/card/tema-title.component";
 import { NewsTitleComponent } from "./news/components/card/news-title.component";
@@ -37,6 +47,7 @@ import { AuthorTitleComponent } from "./news/components/card/author-title.compon
     ],
     declarations: [
         AppComponent,
+        HeaderComponent,
         HomeComponent,
         HomeNewsComponent,
         RegularNewsCardComponent,
@@ -48,7 +59,16 @@ import { AuthorTitleComponent } from "./news/components/card/author-title.compon
         OpinionCardComponent,
         SalidaEmergenciaCardComponent,
         DocumentoIndigoCardComponent,
-        EspecialCardComponent
+        EspecialCardComponent,
+        IndigoTvCardComponent,
+        ReporteCardComponent,
+        LatitudCardComponent,
+        IndigonomicsCardComponent,
+        PiensaCardComponent,
+        FanCardComponent,
+        SeleccionEditorCardComponent,
+        LoMasVistoCardComponent,
+        DesgloseCardComponent
     ],
     providers: [
         
