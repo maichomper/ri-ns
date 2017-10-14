@@ -1,11 +1,16 @@
-<CardView  class="primary-card" elevation="40" radius="10" >
-    <StackLayout>
-        <Image [src]="data.imageUrl" stretch="aspectFit"></Image>
-        <GridLayout padding="14" rows="*, auto">
-            <Label row="0" class="[ title-post ]" [text]="data.title" textAlignment="center" textWrap="true"></Label>
-            <GridLayout row="1">
-               <Label *ngFor="let post of data.posts; let i = index" [text]="post.title" [row]="i"></Label> 
-            </GridLayout>
+<StackLayout color="#FFFFFF">
+	<Label row="0" class="[ title-post ]" color="#FFFFFF" [text]="data.title" textAlignment="center" textWrap="true"></Label>
+    <Image [src]="data.imageUrl" stretch="aspectFit"></Image>
+    <StackLayout *ngFor="let post of data.posts; let i = index" padding="14px">
+<!--     	<Image col="0" src="res://ic_bullet" horizontalAlignment="center" width="80%"></Image> 
+    	<Label [text]="post.title" marginBottom="14px" textWrap="true"></Label>
+        <StackLayout backgroundColor="#edeeee" height="1" class="line"></StackLayout> -->
+        <GridLayout columns="20, *">
+    		<Image col="0" src="res://ic_bullet" horizontalAlignment="center" width="80%"></Image> 
+    		<StackLayout col="1" paddingLeft="14px">
+       	 		<Label [text]="post.title" marginBottom="14px" textWrap="true" fontSize="20px" textTransform="uppercase"></Label>
+        		<StackLayout backgroundColor="#edeeee" height="1" class="line"></StackLayout>
+        	</StackLayout>
         </GridLayout>
     </StackLayout>
-</CardView>
+</StackLayout>

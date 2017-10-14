@@ -13,7 +13,8 @@ export class NewsListService {
 
     constructor(private http: Http) {
         this.loading = false;
-        this.baseURL = "http://pcuervo.com/reporte-indigo/wp-json/";
+        //this.baseURL = "http://pcuervo.com/reporte-indigo/wp-json/";
+        this.baseURL = "http://reporteindigo.com/wp-json/";
     }
 
     loadHomeNews( section: string ){
@@ -71,6 +72,31 @@ export class NewsListService {
             });
     }
 
+    loadArchive( archive:string, perPage:number, offset:number ){
+        let apiURL = this.baseURL + this.getServiceURL( archive ) + "?per_page=" + perPage + "&offset=" + offset;
+        return this.http.get(apiURL)
+            .map( res => {
+                let posts = res.json().map( ( post, index ) => {
+                    return new News(
+                        post.id, 
+                        post.title,
+                        "undefined" != typeof post.tema ? post.tema : "",
+                        "undefined" != typeof post.author ? post.author.name : "",
+                        "undefined" != typeof post.featured_media ? post.featured_media : "",
+                        "",
+                        post.excerpt,
+                        post.date,
+                        "Lectura " + post.tiempo_estimado_lectura,
+                        post.hierarchy = index == 0 ? "primaria" : "secundaria",
+                        post.type,
+                        archive, 
+                        index+1
+                    );
+                });
+                return posts;
+            });
+    }
+
     private getServiceURL( section: string ){
         switch( section ){ 
             case "ultimoMomento": return "ri/v1/ultimo-momento";
@@ -88,7 +114,9 @@ export class NewsListService {
             case "seleccionEditor": return "ri/v1/seleccion-del-editor";
             case "loMasVisto": return "ri/v1/lo-mas-visto";
             case "desglose": return "wp/v2/desglose?per_page=1";
-            case "ultimoMomento": return "ri/v1/ultimo-momento";
+            case "reporteArchive": return "wp/v2/reporte";
+            case "latitudArchive": return "wp/v2/latitud";
+            case "indigonomicsArchive": return "wp/v2/indigonomics";
         }
     }
 

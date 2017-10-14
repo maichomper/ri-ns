@@ -1,17 +1,18 @@
-import { Component, ViewChild, AfterViewInit, OnInit, ChangeDetectorRef } from "@angular/core";
-import * as elementRegistryModule from 'nativescript-angular/element-registry';
-elementRegistryModule.registerElement("CardView", () => require("nativescript-cardview").CardView);
+import { Component, ViewChild, AfterViewInit, ChangeDetectorRef } from "@angular/core";
 import { RadSideDrawerComponent, SideDrawerType } from "nativescript-pro-ui/sidedrawer/angular";
 import { RadSideDrawer } from 'nativescript-pro-ui/sidedrawer';
 import { Page } from "ui/page";
 
+import * as elementRegistryModule from 'nativescript-angular/element-registry';
+elementRegistryModule.registerElement("CardView", () => require("nativescript-cardview").CardView);
+
 @Component({
 	moduleId: module.id,
-    selector: "reporte",
-    templateUrl: "reporte.component.html",
-    styleUrls: ["reporte.component.css"]
+    selector: "menu",
+    templateUrl: "menu.component.html",
+    styleUrls: ["menu.component.css"]
 })
-export class ReporteComponent implements AfterViewInit, OnInit {
+export class MenuComponent implements AfterViewInit {
 	private _mainContentText: string;
 	@ViewChild(RadSideDrawerComponent) public drawerComponent: RadSideDrawerComponent;
     private drawer: RadSideDrawer;
@@ -23,10 +24,6 @@ export class ReporteComponent implements AfterViewInit, OnInit {
     ngAfterViewInit() {
         this.drawer = this.drawerComponent.sideDrawer;
         this._changeDetectionRef.detectChanges();
-    }
-
-    ngOnInit() {
-        this.mainContentText = "SideDrawer for NativeScript can be easily setup in the HTML definition of your page by defining tkDrawerContent and tkMainContent. The component has a default transition and position and also exposes notifications related to changes in its state. Swipe from left to open side drawer.";
     }
 
     get mainContentText() {

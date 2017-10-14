@@ -2,12 +2,37 @@ import { NgModule } from "@angular/core";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { Routes } from "@angular/router";
 
-import { HomeComponent } from "./pages/home/home.component"
-import { ReporteComponent } from "./pages/reporte/reporte.component"
+import { MenuComponent } from "./pages/menu/menu.component";
+import { HomePageComponent } from "./pages/home-page/home-page.component";
+import { ReportePageComponent } from "./pages/reporte-page/reporte-page.component";
+import { LatitudPageComponent } from "./pages/latitud-page/latitud-page.component";
+import { PageIndigonomicsComponent } from "./pages/page-indigonomics/page-indigonomics.component";
 
 const routes: Routes = [
-    { path: "", component: HomeComponent },
-    { path: "", component: ReporteComponent }
+    { path: "", redirectTo: "/menu/home", pathMatch: "full" },
+    {
+      	path: "menu",
+      	component: MenuComponent,
+		children: [
+			{
+		        path: "home",
+		        component: HomePageComponent
+		        //loadChildren: './pages/home-page/home-page.module#HomePageModule'
+		    },
+		    {
+		        path: "reporte",
+		        component: ReportePageComponent
+		    },
+		    {
+		        path: "latitud",
+		        component: LatitudPageComponent
+		    },
+		    {
+		        path: "indigonomics",
+		        component: PageIndigonomicsComponent
+		    }
+		]
+    }
 ];
 
 @NgModule({

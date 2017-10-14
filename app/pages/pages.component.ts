@@ -1,15 +1,15 @@
 import { Component, ViewChild, AfterViewInit, OnInit, ChangeDetectorRef } from "@angular/core";
-import { RadSideDrawerComponent, SideDrawerType } from "nativescript-pro-ui/sidedrawer/angular";
-import { RadSideDrawer } from 'nativescript-pro-ui/sidedrawer';
-import {Page} from "ui/page";
+import { RadSideDrawerComponent, SideDrawerType } from "nativescript-pro-ui/sidedrawer/angular/";
+import { RadSideDrawer } from "nativescript-pro-ui/sidedrawer";
+import { Page } from "ui/page";
 
 @Component({
 	moduleId: module.id,
-    selector: "home",
-    templateUrl: "home.component.html",
-    styleUrls: ["home.component.css"]
+    selector: "pages",
+    templateUrl: "pages.component.html",
+    styleUrls: ["pages.component.css"]
 })
-export class HomeComponent implements AfterViewInit, OnInit {
+export class PagesComponent implements AfterViewInit, OnInit {
 	private _mainContentText: string;
 	@ViewChild(RadSideDrawerComponent) public drawerComponent: RadSideDrawerComponent;
     private drawer: RadSideDrawer;
@@ -19,12 +19,12 @@ export class HomeComponent implements AfterViewInit, OnInit {
     }
 
     ngAfterViewInit() {
-        this.drawer = this.drawerComponent.sideDrawer;
-        this._changeDetectionRef.detectChanges();
+        console.dir(this.drawerComponent);
+        //this.drawer = this.drawerComponent.sideDrawer;
+        //this._changeDetectionRef.detectChanges();
     }
 
     ngOnInit() {
-        console.log('home biatch');
         this.mainContentText = "SideDrawer for NativeScript can be easily setup in the HTML definition of your page by defining tkDrawerContent and tkMainContent. The component has a default transition and position and also exposes notifications related to changes in its state. Swipe from left to open side drawer.";
     }
 

@@ -53,7 +53,7 @@
         </ng-template>
         <!-- Especial -->
         <ng-template nsTemplateKey="especial" let-item="item" let-i="index">
-            <StackLayout backgroundColor="#0093D0">
+            <StackLayout backgroundColor="#0093D0" marginTop="20px">
                 <Image *ngIf="1 === item.position" col="0" src="res://titulo_especial" horizontalAlignment="center" width="80%"></Image> 
                 <especial-card [data]="item"></especial-card>
             </StackLayout>

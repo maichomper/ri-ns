@@ -4,23 +4,21 @@ import { News } from "../../news/news";
 import { NewsListService } from "../../news/services/news-list.service";
 
 @Component({	
-    selector: "home-news",
-    templateUrl: "pages/home/home-news.component.html",
+    selector: "home-page",
+    templateUrl: "pages/home-page/home-page.component.html",
     providers: [NewsListService]
 })
 
 /**
  * Contains properties of a Person.
  */
-export class HomeNewsComponent implements OnInit {
+export class HomePageComponent implements OnInit {
 	postList: Array<News> = [];
 	isLoading: boolean = false;
 	homeSections: Array<string> = [];
 
 	constructor(private newsListService: NewsListService) {
-		this.homeSections.push('especial');
-		
-		this.homeSections.push('layoutHome');
+		//this.homeSections.push('layoutHome');
 		this.homeSections.push('puntosIes');
 		this.homeSections.push('opinion');
 		this.homeSections.push('salidaEmergencia');
@@ -38,14 +36,17 @@ export class HomeNewsComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		console.log('home');
 		this.isLoading = true;
-		this.newsListService.loadHomeNews( 'ultimoMomento' ).subscribe( (data) => {
+		//this.newsListService.loadHomeNews( 'ultimoMomento' ).subscribe( (data) => {
+		this.newsListService.loadHomeNews( 'layoutHome' ).subscribe( (data) => {
 			this.isLoading = false;
 			this.postList = data;
 		});
 	}
 
 	public templateSelector = (item: News, index: number, items: News[]) => {
+		console.log('we here too?');
 		if( "primaria" === item.hierarchy && "layoutHome" === item.section ) {
 			return "primaria";
 		}

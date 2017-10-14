@@ -5,14 +5,18 @@ import { AppComponent } from "./app.component";
 
 import { NativeScriptHttpModule } from "nativescript-angular/http";
 
+import { MenuComponent } from "./pages/menu/menu.component"
 // NativeScript UI
 import { NativeScriptUISideDrawerModule } from "nativescript-pro-ui/sidedrawer/angular";
 import { NativeScriptUIListViewModule } from "nativescript-pro-ui/listview/angular";
 // Page Components
 import { HeaderComponent } from "./pages/navigation/header.component";
-import { HomeComponent } from "./pages/home/home.component";
+import { HomePageComponent } from "./pages/home-page/home-page.component"; 
+import { ReportePageComponent } from "./pages/reporte-page/reporte-page.component"; 
+import { LatitudPageComponent } from "./pages/latitud-page/latitud-page.component"; 
+import { PageIndigonomicsComponent } from "./pages/page-indigonomics/page-indigonomics.component"; 
+
 // News Components
-import { HomeNewsComponent } from "./pages/home/home-news.component";
 import { FeaturedNewsComponent } from "./news/components/featured/featured-news.component";
 import { PuntosIesComponent } from "./news/components/puntos-ies/puntos-ies.component";
 import { RegularNewsCardComponent } from "./news/components/regular/regular-news-card.component";
@@ -48,9 +52,11 @@ import { AuthorTitleComponent } from "./news/components/card/author-title.compon
     ],
     declarations: [
         AppComponent,
-        HeaderComponent,
-        HomeComponent,
-        HomeNewsComponent,
+        HeaderComponent, 
+        HomePageComponent,
+        ReportePageComponent,
+        LatitudPageComponent,
+        PageIndigonomicsComponent,
         RegularNewsCardComponent,
         FeaturedNewsComponent,
         PuntosIesComponent,
@@ -70,7 +76,8 @@ import { AuthorTitleComponent } from "./news/components/card/author-title.compon
         SeleccionEditorCardComponent,
         LoMasVistoCardComponent,
         DesgloseCardComponent,
-        UltimoMomentoCardComponent
+        UltimoMomentoCardComponent,
+        MenuComponent
     ],
     providers: [
         
