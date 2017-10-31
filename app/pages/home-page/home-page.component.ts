@@ -6,12 +6,9 @@ import { NewsListService } from "../../news/services/news-list.service";
 @Component({	
     selector: "home-page",
     templateUrl: "pages/home-page/home-page.component.html",
-    providers: [NewsListService]
+    providers: [NewsListService] 
 })
 
-/**
- * Contains properties of a Person.
- */
 export class HomePageComponent implements OnInit {
 	postList: Array<News> = [];
 	isLoading: boolean = false;
