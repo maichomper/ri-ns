@@ -13,8 +13,8 @@ export class NewsListService {
 
     constructor(private http: Http) {
         this.loading = false;
-        //this.baseURL = "http://pcuervo.com/reporte-indigo/wp-json/";
-        this.baseURL = "http://reporteindigo.com/wp-json/";
+        this.baseURL = "http://pcuervo.com/reporte-indigo/wp-json/";
+        this.baseURL = "http://dev.reporteindigo.com/wp-json/";
     }
 
     loadHomeNews( section: string ){
@@ -35,7 +35,8 @@ export class NewsListService {
                         post.hierarchy = index == 0 ? "primaria" : "secundaria",
                         post.type,
                         section, 
-                        index+1
+                        index+1,
+                        "undefined" != typeof post.kaltura_entry_id ? post.kaltura_entry_id : "",
                     );
                 });
                 return posts;
@@ -90,7 +91,8 @@ export class NewsListService {
                         post.hierarchy = index == 0 ? "primaria" : "secundaria",
                         post.type,
                         archive, 
-                        index+1
+                        index+1,
+                        "undefined" != typeof post.kaltura_entry_id ? post.kaltura_entry_id : "",
                     );
                 });
                 return posts;

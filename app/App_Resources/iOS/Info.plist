@@ -56,6 +56,15 @@
 	            <key>NSTemporaryExceptionMinimumTLSVersion</key>
             	<string>TLSv1.1</string>
 	        </dict>
+	        <key>http://reporteindigo.com</key>
+	        <dict>
+	        	<key>NSIncludesSubdomains</key>
+            	<true/>
+	            <key>NSThirdPartyExceptionAllowsInsecureHTTPLoads</key>
+	            <true/>
+	            <key>NSTemporaryExceptionMinimumTLSVersion</key>
+            	<string>TLSv1.1</string>
+	        </dict>
 	    </dict>
 	</dict>
 	<key>NSAppTransportSecurity</key>

@@ -1,13 +1,11 @@
 <Image row="0" [src]="data.imageUrl" stretch="aspectFit"></Image>
-<CardView row="1" class="featured-card" elevation="40" radius="10" ios:backgroundColor="#FFF" shadowColor="#CCCCCC" shadowOpacity="2">
+<Image row="0" src="res://btn_play" *ngIf="data.kalturaEntryId !== ''" width="80" horizontalAlignment="center" verticalAlignment="center"></Image> 
+<CardView row="1" class="featured-card" elevation="40" radius="10" ios:backgroundColor="#FFF" shadowColor="#CCCCCC" shadowOpacity="2" zIndex="-1">
     <StackLayout>
         <GridLayout padding="14" rows="auto, auto, auto, auto, auto, auto">
-            <!-- <tema-title row="0" [tema]="data.tema" borderWidth="1" borderColor="#000"></tema-title> -->
-            <GridLayout row="0" columns="*, auto, *">
-                <Label col="0" class="[ tema-line ]" verticalAlignment="center"></Label>
-                <Label col="1" class="[ color-primary ][ title-tema ]" [text]="data.tema" textAlignment="center" textWrap="true" ></Label>
-                <Label col="2" class="[ tema-line ]" verticalAlignment="center"></Label>
-            </GridLayout>
+            <StackLayout row="0" *ngIf="data.tema !== ''">
+                <tema-title [tema]="data.tema"></tema-title>
+            </StackLayout>
             <!-- <news-title row="1" [title]="data.title" borderWidth="1" borderColor="#000"></news-title> -->
             <Label row="1" class="[ title-post ]" [text]="data.title" textAlignment="center" textWrap="true"></Label>
             <Label row="2" class="[ author ]" [text]="data.author" textWrap="true"></Label>
@@ -19,7 +17,8 @@
                 <Label col="1" class="[ info ]" [text]="data.date" marginLeft="5" textWrap="true" verticalAlignment="center"></Label>
                 <Image col="2" src="res://ic_clock"></Image> 
                 <Label col="3" [text]="data.reading_time"  marginLeft="5" textWrap="true" verticalAlignment="center"></Label>
-                <Button col="4" class="[ btn btn-transparent ]" text="Leer"></Button>
+                <Button col="4" class="[ btn btn-transparent ]" text="Ver" *ngIf="data.kalturaEntryId !== ''"></Button>
+                <Button col="4" class="[ btn btn-transparent ]" text="Leer" *ngIf="data.kalturaEntryId === ''"></Button>
             </GridLayout>
         </GridLayout>
     </StackLayout>

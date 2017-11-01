@@ -7,5 +7,8 @@ import { Component, Input } from "@angular/core";
 })
 export class TemaTitleComponent {
 	@Input() tema: String;
-	constructor() {}
+	@Input() section: String;
+	constructor() {
+		console.log( this.section );
+	}
 }

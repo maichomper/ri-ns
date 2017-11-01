@@ -1,14 +1,11 @@
 <CardView  class="primary-card" elevation="40" radius="10" ios:backgroundColor="#FFF" shadowColor="#CCCCCC" shadowOpacity="2">
     <StackLayout>
-        <StackLayout *ngIf="'' !== data.imageUrl">
-            <Image [src]="data.imageUrl" stretch="aspectFit" *ngIf="'' !== data.imageUrl"></Image>
-        </StackLayout>
+        <Image [src]="data.imageUrl" stretch="aspectFit"></Image>
+        <Image src="res://btn_play" *ngIf="data.kalturaEntryId !== ''" width="50" horizontalAlignment="center" marginTop="-20"></Image> 
         <GridLayout padding="14" rows="auto, auto, auto, auto, auto, auto">
-            <GridLayout row="0" columns="*, auto, *">
-                <Label col="0" class="[ tema-line ]" verticalAlignment="center" ></Label>
-                <Label col="1" class="[ color-primary ][ title-tema ]" [text]="data.tema" textAlignment="center" textTransform="uppercase" textWrap="true"></Label>
-                <Label col="2" class="[ tema-line ]" verticalAlignment="center"></Label>
-            </GridLayout>
+            <StackLayout row="0" *ngIf="data.tema !== ''">
+                <tema-title [tema]="data.tema"></tema-title>
+            </StackLayout>
             <Label row="1" class="[ title-post ]" [text]="data.title" textAlignment="center" textWrap="true"></Label>
             <Label row="2" class="[ author ]" [text]="data.author" textWrap="true"></Label>
             <Label row="3" class="[ color-dark ][ excerpt ]" [text]="data.excerpt" textAlignment="center" textWrap="true"></Label>

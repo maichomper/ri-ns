@@ -16,6 +16,7 @@ $margin-size: 30px;
 $primary: #0071BC;
 $gray: #8A8686;
 $dark: #000;
+$light: #FFF;
 $danger: #EC1D24;
 
 .red-card {
@@ -27,6 +28,10 @@ $danger: #EC1D24;
 
 .color-dark {
 	color: $dark;
+}
+
+.color-light {
+	color: $light;
 }
 
 .color-danger {
@@ -74,6 +79,10 @@ $danger: #EC1D24;
 	height: 			2;
 	background-color: 	$primary;
 } 
+
+.tema-line-light {
+	background-color: 	$light;
+}
 
 .title-post {
 	font-weight: 700;

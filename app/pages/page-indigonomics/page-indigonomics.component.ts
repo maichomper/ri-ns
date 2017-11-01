@@ -2,11 +2,12 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 
 import { News } from "../../news/news";
 import { NewsListService } from "../../news/services/news-list.service";
+import { LoaderService } from "../../util/loader.service";
 
 @Component({    
     selector: "page-indigonomics",
     templateUrl: "pages/page-indigonomics/page-indigonomics.component.html",
-    providers: [NewsListService]
+    providers: [NewsListService, LoaderService]
 })
 
 /**
@@ -15,23 +16,27 @@ import { NewsListService } from "../../news/services/news-list.service";
 export class PageIndigonomicsComponent implements OnInit {
     postList: Array<News> = [];
     isLoading: boolean = false;
-    isPrimariaLoaded: boolean = false;
+    hasPrimariaLoaded: boolean = false;
     currentPage: number = 1;
-    newsPerPage: number = 20;
+    newsPerPage: number = 3;
 
-    constructor(private newsListService: NewsListService) {}
+    constructor(
+        private newsListService: NewsListService,
+        private loaderService: LoaderService
+    ) {}
 
     ngOnInit() {
+        this.loaderService.show('Cargando Indigonómics');
         this.isLoading = true;
         this.newsListService.loadArchive( 'indigonomicsArchive', this.newsPerPage, 0 ).subscribe( (data) => {
             this.isLoading = false;
             this.postList = data;
+            this.loaderService.hide();
         });
     }
 
     public templateSelector = (item: News, index: number, items: News[]) => {
-        if( ! this.isPrimariaLoaded ) {
-            this.isPrimariaLoaded = true;
+        if( item.position == 1 && this.hasPrimariaLoaded === false  ) {
             return "primaria";
         }
         return "secundaria";
@@ -39,8 +44,11 @@ export class PageIndigonomicsComponent implements OnInit {
 
     loadMoreItems() {
         if( ! this.isLoading ){
-            let offset = this.currentPage * this.newsPerPage;
+            this.loaderService.show('Cargando más noticias...');
             this.isLoading = true;
+            let offset = this.currentPage * this.newsPerPage;
+            
+            if( 1 === this.currentPage ) this.hasPrimariaLoaded = true;
 
             this.newsListService.loadArchive( 'indigonomicsArchive', this.newsPerPage, offset ).subscribe( (data) => {
                 data.map( ( post ) => {
@@ -49,6 +57,7 @@ export class PageIndigonomicsComponent implements OnInit {
                 });
                 this.isLoading = false;
                 this.currentPage += 1;
+                this.loaderService.hide();
             });
         }
     }

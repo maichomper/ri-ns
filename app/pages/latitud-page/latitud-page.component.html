@@ -2,7 +2,7 @@
     <ListView [items]="postList" class="small-spacing" [itemTemplateSelector]="templateSelector" (loadMoreItems)="loadMoreItems()">
         <!-- Layout Home -->
         <ng-template let-item="item" nsTemplateKey="primaria">
-            <GridLayout rows="*, *">
+            <GridLayout>
                 <featured-news [data]="item"></featured-news>
             </GridLayout>
         </ng-template>

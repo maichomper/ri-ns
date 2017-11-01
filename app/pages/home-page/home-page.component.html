@@ -1,7 +1,7 @@
 <StackLayout orientation="vertical"> 
-    <ListView [items]="postList" class="small-spacing" [itemTemplateSelector]="templateSelector" (loadMoreItems)="loadMoreItems()">
+    <ListView [items]="postList" class="small-spacing" [itemTemplateSelector]="templateSelector" (loadMoreItems)="loadMoreItems()" separatorColor="#FFFFFF">
         <!-- Último Momento -->
-        <ng-template nsTemplateKey="ultimoMomento" let-item="item" let-i="index">
+        <ng-template nsTemplateKey="ultimoMomento" let-item="item">
             <ultimo-momento-card [data]="item" padding="14"></ultimo-momento-card>
         </ng-template>
         <!-- Layout Home -->

@@ -2,11 +2,15 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 
 import { News } from "../../news/news";
 import { NewsListService } from "../../news/services/news-list.service";
+import { LoaderService } from "../../util/loader.service";
 
 @Component({	
     selector: "home-page",
     templateUrl: "pages/home-page/home-page.component.html",
-    providers: [NewsListService] 
+    providers: [
+    	NewsListService,
+    	LoaderService
+    ] 
 })
 
 export class HomePageComponent implements OnInit {
@@ -14,8 +18,13 @@ export class HomePageComponent implements OnInit {
 	isLoading: boolean = false;
 	homeSections: Array<string> = [];
 
-	constructor(private newsListService: NewsListService) {
+	constructor(
+		private newsListService: NewsListService,
+		private loaderService: LoaderService
+	) {
 		//this.homeSections.push('layoutHome');
+		this.homeSections.push('piensa');
+
 		this.homeSections.push('puntosIes');
 		this.homeSections.push('opinion');
 		this.homeSections.push('salidaEmergencia');
@@ -33,17 +42,17 @@ export class HomePageComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		console.log('home');
 		this.isLoading = true;
+		this.loaderService.show('Cargando noticias...');
 		//this.newsListService.loadHomeNews( 'ultimoMomento' ).subscribe( (data) => {
 		this.newsListService.loadHomeNews( 'layoutHome' ).subscribe( (data) => {
 			this.isLoading = false;
 			this.postList = data;
+			this.loaderService.hide();
 		});
 	}
 
 	public templateSelector = (item: News, index: number, items: News[]) => {
-		console.log('we here too?');
 		if( "primaria" === item.hierarchy && "layoutHome" === item.section ) {
 			return "primaria";
 		}
@@ -55,12 +64,14 @@ export class HomePageComponent implements OnInit {
 
     loadMoreItems() {
     	if( ! this.isLoading && this.homeSections.length ){
+    		this.loaderService.show('Cargando más noticias...');
     		this.isLoading = true;
     		if( 'especial' == this.homeSections[0] ){
     			this.newsListService.loadHomeEspecial().subscribe( (post) => {
 		    		this.postList.push( post );
 		    		this.homeSections.splice(0,1);
 					this.isLoading = false; 
+					this.loaderService.hide();
 				});
 				return;
     		}
@@ -78,6 +89,7 @@ export class HomePageComponent implements OnInit {
 	    			
 	    		});
 	    		this.homeSections.splice(0,1);
+	    		this.loaderService.hide();
 				this.isLoading = false;
 			});
     	}

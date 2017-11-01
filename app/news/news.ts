@@ -12,6 +12,7 @@ export class News {
 		public hierarchy: string,
 		public type: string,
 		public section: string,
-		public position: number
+		public position: number,
+		public kalturaEntryId: string,
 	){}
 }
