@@ -1,0 +1,3 @@
+<AbsoluteLayout *ngIf="isVisible" class="videoModal">
+    <WebView class="videoModal__webView" #webView [src]="webViewSrc" (loaded)="onWebViewLoaded($event)"></WebView>
+</AbsoluteLayout>

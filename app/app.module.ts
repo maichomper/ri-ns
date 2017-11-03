@@ -17,6 +17,7 @@ import { LatitudPageComponent } from "./pages/latitud-page/latitud-page.componen
 import { PageIndigonomicsComponent } from "./pages/page-indigonomics/page-indigonomics.component"; 
 import { PageOpinionComponent } from "./pages/page-opinion/page-opinion.component"; 
 
+
 // News Components
 import { FeaturedNewsComponent } from "./news/components/featured/featured-news.component";
 import { PuntosIesComponent } from "./news/components/puntos-ies/puntos-ies.component";
@@ -41,6 +42,10 @@ import { TemaTitleComponent } from "./news/components/card/tema-title.component"
 import { NewsTitleComponent } from "./news/components/card/news-title.component";
 import { AuthorTitleComponent } from "./news/components/card/author-title.component";
 
+import { SharedModule } from "./shared/shared.module";
+
+import { PubSubService } from "./shared/services/pub-sub.service"
+
 @NgModule({
     bootstrap: [
         AppComponent
@@ -50,11 +55,12 @@ import { AuthorTitleComponent } from "./news/components/card/author-title.compon
         AppRoutingModule,
         NativeScriptHttpModule,
         NativeScriptUISideDrawerModule,
-        NativeScriptUIListViewModule
+        NativeScriptUIListViewModule,
+        SharedModule
     ],
     declarations: [
         AppComponent,
-        HeaderComponent, 
+        HeaderComponent,
         HomePageComponent,
         ReportePageComponent,
         LatitudPageComponent,
@@ -84,7 +90,7 @@ import { AuthorTitleComponent } from "./news/components/card/author-title.compon
         ColumnaCardComponent
     ],
     providers: [
-        
+        PubSubService
     ],
     schemas: [
         NO_ERRORS_SCHEMA

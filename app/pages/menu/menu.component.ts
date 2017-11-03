@@ -6,18 +6,25 @@ import { Page } from "ui/page";
 import * as elementRegistryModule from 'nativescript-angular/element-registry';
 elementRegistryModule.registerElement("CardView", () => require("nativescript-cardview").CardView);
 
+import { PubSubService } from "../../shared/services/pub-sub.service";
+import { VideoModalVisibleView } from "../../shared/components/video-modal/video-modal.component";
+
 @Component({
-	moduleId: module.id,
+    moduleId: module.id,
     selector: "menu",
     templateUrl: "menu.component.html",
     styleUrls: ["menu.component.css"]
 })
 export class MenuComponent implements AfterViewInit {
-	private _mainContentText: string;
-	@ViewChild(RadSideDrawerComponent) public drawerComponent: RadSideDrawerComponent;
+    private _mainContentText: string;
+    @ViewChild(RadSideDrawerComponent) public drawerComponent: RadSideDrawerComponent;
     private drawer: RadSideDrawer;
 
-    constructor(private _changeDetectionRef: ChangeDetectorRef, page: Page) {
+    constructor(
+        private _changeDetectionRef: ChangeDetectorRef, 
+        page: Page,
+        private _pubSubService: PubSubService
+    ) {
         page.actionBarHidden = true;
     }
 
@@ -39,6 +46,12 @@ export class MenuComponent implements AfterViewInit {
     }
 
     public onCloseDrawerTap() {
-       this.drawer.closeDrawer();
+        this.drawer.closeDrawer();
     }
+
+    public videoModalTest() {
+        let videoModalVisible: VideoModalVisibleView = new VideoModalVisibleView("0_51s26m1i");
+        this._pubSubService.videoModalVisible.emit(videoModalVisible);
+    }
+
 }

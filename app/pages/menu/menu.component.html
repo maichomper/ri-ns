@@ -4,6 +4,7 @@
             <Image src="res://logo_header" class="action-image"></Image>
         </StackLayout>
         <StackLayout class="sideStackLayout">
+            <Label text="VideoTest" class="sideLabel" (tap)="videoModalTest()"></Label>
             <Label text="Portada" class="sideLabel" [nsRouterLink]="['home']" nsRouterLinkActive="sideLabelActive" [nsRouterLinkActiveOptions]="{exact: true}" (tap)="onCloseDrawerTap()"></Label>
             <Label text="Reporte" class="sideLabel" [nsRouterLink]="['reporte']" nsRouterLinkActive="sideLabelActive" [nsRouterLinkActiveOptions]="{exact: true}" (tap)="onCloseDrawerTap()"></Label>
             <Label  text="Opinión" class="sideLabel" [nsRouterLink]="['opinion']" nsRouterLinkActive="sideLabelActive" [nsRouterLinkActiveOptions]="{exact: true}" (tap)="onCloseDrawerTap()"></Label>
@@ -29,6 +30,6 @@
             <Image col="1" src="res://logo_header" textAlignment="center" horizontalAlignment="center"></Image>
             <Image col="2" src="res://ic_search" (tap)="openDrawer()" textAlignment="right" horizontalAlignment="right"></Image>
         </GridLayout>
-       <router-outlet></router-outlet>
+        <router-outlet></router-outlet>
     </StackLayout>
 </RadSideDrawer>
