@@ -1,0 +1,26 @@
+<StackLayout orientation="vertical"> 
+    <Label text="Opinión" class="[ archive-title ]"></Label>
+    <ListView [items]="postList" class="small-spacing" [itemTemplateSelector]="templateSelector" (loadMoreItems)="loadMoreItems()" separatorColor="#FFFFFF">
+        <!-- Puntos sobre las Íes -->
+        <ng-template nsTemplateKey="puntosIes" let-item="item" let-i="index">
+            <StackLayout class="background-gray">
+                <GridLayout *ngIf="1 === item.position" columns="auto, *" marginTop="20">
+                    <Image col="0" colSpan="1" src="res://titulo_puntos_sobre_las_ies"></Image> 
+                </GridLayout>
+                <puntos-ies [data]="item" [index]="i"></puntos-ies>
+            </StackLayout>
+        </ng-template>
+        <!-- Opinión -->
+        <ng-template nsTemplateKey="redesOpinion" let-item="item" let-i="index">
+            <StackLayout>
+                <columna-card [data]="item" [index]="i"></columna-card>
+            </StackLayout>
+        </ng-template>
+        <!-- Opinión -->
+        <ng-template nsTemplateKey="columnas" let-item="item" let-i="index">
+            <StackLayout>
+                <opinion-card [data]="item" [index]="i"></opinion-card>
+            </StackLayout>
+        </ng-template>
+    </ListView>
+</StackLayout>

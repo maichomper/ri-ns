@@ -11,10 +11,12 @@ import { NativeScriptUISideDrawerModule } from "nativescript-pro-ui/sidedrawer/a
 import { NativeScriptUIListViewModule } from "nativescript-pro-ui/listview/angular";
 // Page Components
 import { HeaderComponent } from "./pages/navigation/header.component";
-import { HomePageComponent } from "./pages/home-page/home-page.component";
-import { ReportePageComponent } from "./pages/reporte-page/reporte-page.component";
-import { LatitudPageComponent } from "./pages/latitud-page/latitud-page.component";
-import { PageIndigonomicsComponent } from "./pages/page-indigonomics/page-indigonomics.component";
+import { HomePageComponent } from "./pages/home-page/home-page.component"; 
+import { ReportePageComponent } from "./pages/reporte-page/reporte-page.component"; 
+import { LatitudPageComponent } from "./pages/latitud-page/latitud-page.component"; 
+import { PageIndigonomicsComponent } from "./pages/page-indigonomics/page-indigonomics.component"; 
+import { PageOpinionComponent } from "./pages/page-opinion/page-opinion.component"; 
+
 
 // News Components
 import { FeaturedNewsComponent } from "./news/components/featured/featured-news.component";
@@ -34,6 +36,7 @@ import { SeleccionEditorCardComponent } from "./news/components/seleccion-editor
 import { LoMasVistoCardComponent } from "./news/components/lo-mas-visto/lo-mas-visto-card.component";
 import { DesgloseCardComponent } from "./news/components/desglose/desglose-card.component";
 import { UltimoMomentoCardComponent } from "./news/components/ultimo-momento/ultimo-momento-card.component";
+import { ColumnaCardComponent } from "./news/components/columna/columna-card.component";
 // Card Components
 import { TemaTitleComponent } from "./news/components/card/tema-title.component";
 import { NewsTitleComponent } from "./news/components/card/news-title.component";
@@ -62,6 +65,7 @@ import { PubSubService } from "./shared/services/pub-sub.service"
         ReportePageComponent,
         LatitudPageComponent,
         PageIndigonomicsComponent,
+        PageOpinionComponent,
         RegularNewsCardComponent,
         FeaturedNewsComponent,
         PuntosIesComponent,
@@ -82,7 +86,8 @@ import { PubSubService } from "./shared/services/pub-sub.service"
         LoMasVistoCardComponent,
         DesgloseCardComponent,
         UltimoMomentoCardComponent,
-        MenuComponent
+        MenuComponent,
+        ColumnaCardComponent
     ],
     providers: [
         PubSubService
