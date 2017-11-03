@@ -5,6 +5,7 @@ import "rxjs/add/operator/map";
 
 import { News } from "../news";
 import { EspecialNews } from "../especial-news";
+import { ColumnaNews } from "../columna-news";
 
 @Injectable()
 export class NewsListService {
@@ -99,6 +100,28 @@ export class NewsListService {
             });
     }
 
+    loadOpinionNews( section: string ){
+        let apiURL = this.baseURL + this.getServiceURL( section );
+        return this.http.get(apiURL)
+            .map( res => {
+                let posts = res.json().map( ( post, index ) => {
+                    return new ColumnaNews(
+                        post.id, 
+                        post.title,
+                        "undefined" != typeof post.tema ? post.tema : "",
+                        "undefined" != typeof post.author ? post.author.name : "",
+                        "undefined" != typeof post.featured_media ? post.featured_media : "",
+                        post.excerpt,
+                        post.date,
+                        "Lectura " + post.tiempo_estimado_lectura,
+                        'opinion', 
+                        post.columna
+                    );
+                });
+                return posts;
+            });
+    }
+
     private getServiceURL( section: string ){
         switch( section ){ 
             case "ultimoMomento": return "ri/v1/ultimo-momento";
@@ -119,6 +142,8 @@ export class NewsListService {
             case "reporteArchive": return "wp/v2/reporte";
             case "latitudArchive": return "wp/v2/latitud";
             case "indigonomicsArchive": return "wp/v2/indigonomics";
+            case "redesOpinion": return "ri/v1/redes-opinion";
+            case "columnas": return "ri/v1/columnas";
         }
     }
 

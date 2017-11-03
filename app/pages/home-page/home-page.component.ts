@@ -23,8 +23,6 @@ export class HomePageComponent implements OnInit {
 		private loaderService: LoaderService
 	) {
 		//this.homeSections.push('layoutHome');
-		this.homeSections.push('piensa');
-
 		this.homeSections.push('puntosIes');
 		this.homeSections.push('opinion');
 		this.homeSections.push('salidaEmergencia');
@@ -69,28 +67,19 @@ export class HomePageComponent implements OnInit {
     		if( 'especial' == this.homeSections[0] ){
     			this.newsListService.loadHomeEspecial().subscribe( (post) => {
 		    		this.postList.push( post );
-		    		this.homeSections.splice(0,1);
 					this.isLoading = false; 
 					this.loaderService.hide();
 				});
+				this.homeSections.splice(0,1);
 				return;
     		}
-    // 		if( 'loMasVisto' == this.homeSections[0] ){
-    // 			this.newsListService.loadHomeLoMasVisto().subscribe( (post) => {
-		  //   		this.postList.push( post );
-		  //   		this.homeSections.splice(0,1);
-				// 	this.isLoading = false;
-				// });
-				// return;
-    // 		}
     		this.newsListService.loadHomeNews( this.homeSections[0] ).subscribe( (data) => {
 	    		data.map( ( post ) => {
 	    			this.postList.push( post );
-	    			
+	    			this.isLoading = false;
+    				this.loaderService.hide();
 	    		});
-	    		this.homeSections.splice(0,1);
-	    		this.loaderService.hide();
-				this.isLoading = false;
+				this.homeSections.splice(0,1);
 			});
     	}
 

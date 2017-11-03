@@ -15,6 +15,7 @@ import { HomePageComponent } from "./pages/home-page/home-page.component";
 import { ReportePageComponent } from "./pages/reporte-page/reporte-page.component"; 
 import { LatitudPageComponent } from "./pages/latitud-page/latitud-page.component"; 
 import { PageIndigonomicsComponent } from "./pages/page-indigonomics/page-indigonomics.component"; 
+import { PageOpinionComponent } from "./pages/page-opinion/page-opinion.component"; 
 
 // News Components
 import { FeaturedNewsComponent } from "./news/components/featured/featured-news.component";
@@ -34,6 +35,7 @@ import { SeleccionEditorCardComponent } from "./news/components/seleccion-editor
 import { LoMasVistoCardComponent } from "./news/components/lo-mas-visto/lo-mas-visto-card.component";
 import { DesgloseCardComponent } from "./news/components/desglose/desglose-card.component";
 import { UltimoMomentoCardComponent } from "./news/components/ultimo-momento/ultimo-momento-card.component";
+import { ColumnaCardComponent } from "./news/components/columna/columna-card.component";
 // Card Components
 import { TemaTitleComponent } from "./news/components/card/tema-title.component";
 import { NewsTitleComponent } from "./news/components/card/news-title.component";
@@ -57,6 +59,7 @@ import { AuthorTitleComponent } from "./news/components/card/author-title.compon
         ReportePageComponent,
         LatitudPageComponent,
         PageIndigonomicsComponent,
+        PageOpinionComponent,
         RegularNewsCardComponent,
         FeaturedNewsComponent,
         PuntosIesComponent,
@@ -77,7 +80,8 @@ import { AuthorTitleComponent } from "./news/components/card/author-title.compon
         LoMasVistoCardComponent,
         DesgloseCardComponent,
         UltimoMomentoCardComponent,
-        MenuComponent
+        MenuComponent,
+        ColumnaCardComponent
     ],
     providers: [
         

@@ -36,7 +36,6 @@ export class LoaderService {
     }
 
     show( message:string ){
-        console.log('showing with message:' + message);
         this.options.message = message;
         this.loader.show( this.options );
     }

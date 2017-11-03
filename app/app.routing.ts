@@ -7,6 +7,7 @@ import { HomePageComponent } from "./pages/home-page/home-page.component";
 import { ReportePageComponent } from "./pages/reporte-page/reporte-page.component";
 import { LatitudPageComponent } from "./pages/latitud-page/latitud-page.component";
 import { PageIndigonomicsComponent } from "./pages/page-indigonomics/page-indigonomics.component";
+import { PageOpinionComponent } from "./pages/page-opinion/page-opinion.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "/menu/home", pathMatch: "full" },
@@ -30,6 +31,10 @@ const routes: Routes = [
 		    {
 		        path: "indigonomics",
 		        component: PageIndigonomicsComponent
+		    },
+		    {
+		        path: "opinion",
+		        component: PageOpinionComponent
 		    }
 		]
     }
