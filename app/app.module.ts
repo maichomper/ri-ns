@@ -11,10 +11,10 @@ import { NativeScriptUISideDrawerModule } from "nativescript-pro-ui/sidedrawer/a
 import { NativeScriptUIListViewModule } from "nativescript-pro-ui/listview/angular";
 // Page Components
 import { HeaderComponent } from "./pages/navigation/header.component";
-import { HomePageComponent } from "./pages/home-page/home-page.component"; 
-import { ReportePageComponent } from "./pages/reporte-page/reporte-page.component"; 
-import { LatitudPageComponent } from "./pages/latitud-page/latitud-page.component"; 
-import { PageIndigonomicsComponent } from "./pages/page-indigonomics/page-indigonomics.component"; 
+import { HomePageComponent } from "./pages/home-page/home-page.component";
+import { ReportePageComponent } from "./pages/reporte-page/reporte-page.component";
+import { LatitudPageComponent } from "./pages/latitud-page/latitud-page.component";
+import { PageIndigonomicsComponent } from "./pages/page-indigonomics/page-indigonomics.component";
 
 // News Components
 import { FeaturedNewsComponent } from "./news/components/featured/featured-news.component";
@@ -39,6 +39,10 @@ import { TemaTitleComponent } from "./news/components/card/tema-title.component"
 import { NewsTitleComponent } from "./news/components/card/news-title.component";
 import { AuthorTitleComponent } from "./news/components/card/author-title.component";
 
+import { SharedModule } from "./shared/shared.module";
+
+import { PubSubService } from "./shared/services/pub-sub.service"
+
 @NgModule({
     bootstrap: [
         AppComponent
@@ -48,11 +52,12 @@ import { AuthorTitleComponent } from "./news/components/card/author-title.compon
         AppRoutingModule,
         NativeScriptHttpModule,
         NativeScriptUISideDrawerModule,
-        NativeScriptUIListViewModule
+        NativeScriptUIListViewModule,
+        SharedModule
     ],
     declarations: [
         AppComponent,
-        HeaderComponent, 
+        HeaderComponent,
         HomePageComponent,
         ReportePageComponent,
         LatitudPageComponent,
@@ -80,7 +85,7 @@ import { AuthorTitleComponent } from "./news/components/card/author-title.compon
         MenuComponent
     ],
     providers: [
-        
+        PubSubService
     ],
     schemas: [
         NO_ERRORS_SCHEMA
